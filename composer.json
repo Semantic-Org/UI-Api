@@ -14,5 +14,9 @@
     "jquery": "x.x.x"
   },
   "main": "api.js",
+<<<<<<< HEAD
   "version": "1.0.0-beta"
+=======
+  "version": "1.0.0"
+>>>>>>> d86bc7ea371ef48b6d5e9a1a847c51f28b77643d
 }
