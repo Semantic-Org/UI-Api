@@ -182,7 +182,9 @@ $.api = module.exports = function(parameters) {
             complete   : function() {}
           });
 
-          module.verbose('Creating AJAX request with settings', ajaxSettings);
+          module.debug('Querying URL', ajaxSettings.url);
+          module.debug('Sending data', data, ajaxSettings.method);
+          module.verbose('Using AJAX settings', ajaxSettings);
 
           if( module.is.loading() ) {
             // throttle additional requests
@@ -385,7 +387,7 @@ $.api = module.exports = function(parameters) {
 
                   // if http status code returned and json returned error, look for it
                   if( xhr.status != 200 && httpMessage !== undefined && httpMessage !== '') {
-                    module.error(error.statusMessage + httpMessage);
+                    module.error(error.statusMessage + httpMessage, ajaxSettings.url);
                   }
                   else {
                     if(status == 'error' && settings.dataType == 'json') {
@@ -769,7 +771,7 @@ $.api.settings = {
   namespace       : 'api',
 
   debug           : true,
-  verbose         : true,
+  verbose         : false,
   performance     : true,
 
   // event binding

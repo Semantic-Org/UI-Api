@@ -1,17 +1,14 @@
-var
-  where = 'client' // Adds files only to the client
-;
 
 Package.describe({
   name    : 'semantic:ui-api',
-  summary : 'Semantic UI - Api (official): Single component release of api',
-  version : '1.9.2',
+  summary : 'Semantic UI - Api: Single component release',
+  version : '1.9.3',
   git     : 'git://github.com/Semantic-Org/UI-Api.git',
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
   api.addFiles([
-    
-  ], where);
+    'api.js'
+  ], 'client');
 });

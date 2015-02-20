@@ -1,3 +1,7 @@
+### Version 1.9.3 - February 20, 2015
+
+- **API** - Simplified `api` debug output to console to more clearly label url and data sent
+
 ### UI Changes
 
 - **API** - API now has an ``onRequest`` callback setting that receives the XHR promise after initializing the request
