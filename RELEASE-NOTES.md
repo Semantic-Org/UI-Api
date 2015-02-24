@@ -1,3 +1,8 @@
+### Version 1.10.0 - February 23, 2015
+
+- **API** - Added `was cancelled` to determine whether request was cancelled by `beforeSend`
+- **State** - Text states now handle `cancelled` API requests correctly
+
 ### Version 1.9.3 - February 20, 2015
 
 - **API** - Simplified `api` debug output to console to more clearly label url and data sent
