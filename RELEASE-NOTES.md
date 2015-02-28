@@ -1,3 +1,8 @@
+### Version 1.10.4 - February 28, 2015
+
+- **API** - Remove console error message when no API url is specified but element is a `form` (defaults to `form` action)
+- **API** - `api` check for [serialize object](https://github.com/macek/jquery-serialize-object) optional dependency no longer produces error when `serializeForm: true` and dependency is not found.
+
 ### Version 1.10.0 - February 23, 2015
 
 - **API** - Added `was cancelled` to determine whether request was cancelled by `beforeSend`
