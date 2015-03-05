@@ -1,3 +1,7 @@
+### Version 1.11.0 - March 3, 2015
+
+- **Search** - Fix a bug with `onSelect returning `null` when results retrieved from cached API query
+
 ### Version 1.10.4 - February 28, 2015
 
 - **API** - Remove console error message when no API url is specified but element is a `form` (defaults to `form` action)
