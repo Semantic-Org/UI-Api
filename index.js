@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 1.11.5 - API
+ * # Semantic UI 1.11.6 - API
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -13,9 +13,8 @@
 
 "use strict";
 
-$.api = module.exports = function(parameters) {
-  var _module = module;
-
+$.api = var _module = module;
+module.exports = function(parameters) {
 
   var
     // use window context if none specified
