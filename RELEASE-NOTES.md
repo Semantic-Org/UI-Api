@@ -1,3 +1,20 @@
+### Version 2.0.0 - June 30, 2015
+
+- **API** - API `onFailure` will now be called **in all failure conditions**, when a request is errored (504, 404 etc), aborted (page change or CORS), or JSON does not pass `successTest` function. `onError` and `onAbort` will also fire for each specific failure condition.
+- **Multiselect** - New `multiple` dropdown types have been added. Many new dropdown improvements have been added including tagging/tokenizing features and loading data through API requests.
+- **API** - API can now be used with mocked responses, and custom AJAX requests. `mockResponse` has been added to resolve request with a prespecified JSON object, or a synchronous function callback.
+- **API** `mockResponseAsync` has been added for custom asynchronous requests. This allows you to specify a custom async callback to resolve an API request, helping with integration with libraries like Ember or Angular that may wrap AJAX requests.
+- **API** - API callbacks now have an `onResponse` callback that can adjust a servers response before it is parsed by other callbacks for success or failure conditions. **Thanks @mnquintana**
+- **API** - API now provides a local caching setting to avoid server roundtrips for identical urls by using `cache: 'local'`. This is not enabled by default.  Local caching is useful for results that should return the same values across a single session, for example when querying an autocomplete.
+- **Dropdown** - Added remote API integration with dropdown, to allow `search selection` to query against a remote dataset.
+- **API** - API now has new settings `throttleFirstRequest` and `interruptRequests`. Interrupt requests will abort a previous request on an element when making a new request. `throttleFirstRequest`, sets whether the first request or only subsequent requests should be throttled when a `throttle` duration is specified.
+- **Accordion** - Fixed bug where `exclusive: true` could sometimes cause other accordion element animations to get stuck when animating rapidly
+- **API** - API longer uses `readyState = 0` as sole check for request abort, this may accidentally trigger with `JSONP` or `CORS` requests.
+- **API** - Fixed `this` context of `beforeSend` to use `stateContext` not `element`
+- **API** - Fixed `loadingDuration` not correctly delaying requests when invoking with  `.api('query')`
+- **Search** - Search will no longer incorrectly produce an error when API settings are passed through metadata
+- **Search** - Search API calls now use the same level debug settings as search
+
 ### Version 1.11.0 - March 3, 2015
 
 - **Search** - Fix a bug with `onSelect returning `null` when results retrieved from cached API query
