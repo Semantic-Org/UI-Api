@@ -1,3 +1,7 @@
+### Version 2.0.1 - June 30, 2015
+
+- **Tab** - Tab now correctly obeys `cache` setting. Removed use of API's local caching by default. [#2493](https://github.com/Semantic-Org/Semantic-UI/issues/2493)
+
 ### Version 2.0.0 - June 30, 2015
 
 - **API** - API `onFailure` will now be called **in all failure conditions**, when a request is errored (504, 404 etc), aborted (page change or CORS), or JSON does not pass `successTest` function. `onError` and `onAbort` will also fire for each specific failure condition.
