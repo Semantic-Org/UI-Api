@@ -1,4 +1,4 @@
-### Version 2.0.1 - June 30, 2015
+### Version 2.0.1 - July 6, 2015
 
 - **Tab** - Tab now correctly obeys `cache` setting. Removed use of API's local caching by default. [#2493](https://github.com/Semantic-Org/Semantic-UI/issues/2493)
 
