@@ -1,3 +1,7 @@
+### Version 2.0.3 - July 8, 2015
+
+- **Dropdown** - Dropdown using `<select>` and `apiSettings` will now correctly add new `<option>` value when selections are made [#2573](https://github.com/Semantic-Org/Semantic-UI/issues/2573)
+
 ### Version 2.0.1 - July 6, 2015
 
 - **Tab** - Tab now correctly obeys `cache` setting. Removed use of API's local caching by default. [#2493](https://github.com/Semantic-Org/Semantic-UI/issues/2493)
