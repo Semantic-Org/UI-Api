@@ -1,5 +1,5 @@
 /*!
- * # Semantic UI 2.0.8 - API
+ * # Semantic UI 2.0.7 - API
  * http://github.com/semantic-org/semantic-ui/
  *
  *
@@ -110,7 +110,7 @@ $.api = module.exports = function(parameters) {
               ;
             }
             else if(settings.on == 'now') {
-              module.debug('Querying API now', triggerEvent);
+              module.debug('Querying API endpoint immediately');
               module.query();
             }
           }
@@ -267,12 +267,18 @@ $.api = module.exports = function(parameters) {
 
         },
 
+        should: {
+          removeError: function() {
+            return ( settings.hideError === true || (settings.hideError === 'auto' && !module.is.form()) );
+          }
+        },
+
         is: {
           disabled: function() {
             return ($module.filter(selector.disabled).length > 0);
           },
           form: function() {
-            return $module.is('form');
+            return $module.is('form') || $context.is('form');
           },
           mocked: function() {
             return (settings.mockResponse || settings.mockResponseAsync);
@@ -359,7 +365,11 @@ $.api = module.exports = function(parameters) {
                   }
                   else {
                     module.verbose('Found required variable', variable, value);
-                    url = url.replace(templatedString, module.get.urlEncodedValue(value));
+                    value = (settings.encodeParameters)
+                      ? module.get.urlEncodedValue(value)
+                      : value
+                    ;
+                    url = url.replace(templatedString, value);
                   }
                 });
               }
@@ -559,7 +569,9 @@ $.api = module.exports = function(parameters) {
               if(settings.errorDuration && status !== 'aborted') {
                 module.debug('Adding error state');
                 module.set.error();
-                setTimeout(module.remove.error, settings.errorDuration);
+                if( module.should.removeError() ) {
+                  setTimeout(module.remove.error, settings.errorDuration);
+                }
               }
               module.debug('API Request failed', errorMessage, xhr);
               settings.onFailure.call(context, response, $module, xhr);
@@ -725,7 +737,7 @@ $.api = module.exports = function(parameters) {
               module.debug('URL value is already encoded, avoiding double encoding', value);
               return value;
             }
-            module.verbose('Encoding value for url', value, encodedValue);
+            module.verbose('Encoding value using encodeURIComponent', value, encodedValue);
             return encodedValue;
           },
           defaultData: function() {
@@ -786,7 +798,7 @@ $.api = module.exports = function(parameters) {
               url = settings.api[action];
             }
             else if( module.is.form() ) {
-              url = $module.attr('action') || false;
+              url = $module.attr('action') || $context.attr('action') || false;
               module.debug('No url or action specified, defaulting to form action', url);
             }
             return url;
@@ -991,7 +1003,7 @@ $.api.settings = {
   name              : 'API',
   namespace         : 'api',
 
-  debug             : true,
+  debug             : false,
   verbose           : false,
   performance       : true,
 
@@ -1013,8 +1025,14 @@ $.api.settings = {
   // duration for loading state
   loadingDuration   : 0,
 
+  // whether to hide errors after a period of time
+  hideError         : 'auto',
+
   // duration for error state
   errorDuration     : 2000,
+
+  // whether parameters should be encoded with encodeURIComponent
+  encodeParameters  : true,
 
   // API action to use
   action            : false,

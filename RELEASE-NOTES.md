@@ -1,3 +1,15 @@
+#### Features
+
+- **API** - Added `encodeParameters` option to enable/disable parameters being encoded with `encodeURIComponent` [#2752](https://github.com/Semantic-Org/Semantic-UI/issues/2752)
+- **API** Added new setting `hideError`, defaults to `auto` (will automatically hide error for elements that are not forms). [#2586](https://github.com/Semantic-Org/Semantic-UI/issues/2586)
+- **Dropdown**  - Dropdown using remote data, can now customize the property names returned by api call using `fields` (similar to search).
+
+#### Bugs
+
+- **API** - API debug is now `false` by default, like other modules. [#2817](https://github.com/Semantic-Org/Semantic-UI/issues/2817)
+- **Build Tools** - Removed octal literals from install scripts (for color escaping), and uses of future ECMAScript reserved words [#2838 [#2839 **Thanks @artemkaint**](https://github.com/Semantic-Org/Semantic-UI/issues/nt**)
+- **API** - API now will use automatically use `form` action if no api event is specified now  when form is `stateContext` but not intialized element
+
 ### Version 2.0.7 - July 23, 2015
 
 - **API** - Fixed some cases where `onComplete`, `onSuccess` and `onFailure` would receive XHR as first parameter and not `response`. [#2713](https://github.com/Semantic-Org/Semantic-UI/issues/2713)
