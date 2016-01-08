@@ -2,7 +2,7 @@
 Package.describe({
   name    : 'semantic:ui-api',
   summary : 'Semantic UI - Api: Single component release',
-  version : '2.1.7',
+  version : '2.1.8',
   git     : 'git://github.com/Semantic-Org/UI-Api.git',
 });
 
