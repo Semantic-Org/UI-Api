@@ -1,3 +1,13 @@
+### Version 2.2.0 - June 26, 2016
+
+- **Progress** - Progress now uses a polling interval for updates. Rapidly updating the progress bar over a period quicker than the animation duration (for example with xhr `onprogress` events say every 50ms) will now appear smooth as butter.
+- **API** - `beforeSend` would not correctly cancel request when `return false;` is used in callback. [#3660](https://github.com/Semantic-Org/Semantic-UI/issues/3660)
+- **API** - `cache: 'local'` would not return the localstorage cached results in some cases
+- **API** - Using `onResponse` with `dataType` other than JSON or JSONP would cause an error. (Not allowing plain text responses to be translated) [#3653](https://github.com/Semantic-Org/Semantic-UI/issues/3653)
+- **Dropdown** - `apiSettings` was not defaulting to use `cache: 'local'` as specified in the docs
+- **Embed** - `API` setting is now disabled by default
+- **Search** - Added `refresh` behavior for search to refresh selector cache. Cache will automatically refresh after API results received
+
 ### Version 2.1.7 - Dec 19, 2015
 
 - **API** - All responses fulfilled with settings (like `mockResponse`) will now receive a settings object with all values resolved. For example `url` will be `/user/2/` and not `user/{id}` in the callback. - [#3466](https://github.com/Semantic-Org/Semantic-UI/issues/3466)
@@ -17,13 +27,13 @@
 
 - **API** - API debug is now `false` by default, like other modules. [#2817](https://github.com/Semantic-Org/Semantic-UI/issues/2817)
 - **Build Tools** - Removed octal literals from install scripts (for color escaping), and uses of future ECMAScript reserved words [#2838 [#2839 **Thanks @artemkaint**](https://github.com/Semantic-Org/Semantic-UI/issues/nt**)
-- **API** - API now will use automatically use `form` action if no api event is specified now  when form is `stateContext` but not intialized element
+- **API** - API now will use automatically use `form` action if no api event is specified now  when form is `stateContext` but not initialized element
 
 ### Version 2.0.7 - July 23, 2015
 
 - **API** - Fixed some cases where `onComplete`, `onSuccess` and `onFailure` would receive XHR as first parameter and not `response`. [#2713](https://github.com/Semantic-Org/Semantic-UI/issues/2713)
 - **API** - Fixed issue where `onFailure` would pass response as stringified JSON and not a JS object [#2713](https://github.com/Semantic-Org/Semantic-UI/issues/2713)
-- **API** - All API callbacks now recieve `xhr` from API request as the third calback parameter
+- **API** - All API callbacks now receive `xhr` from API request as the third callback parameter
 
 ### Version 2.0.5 - July 20, 2015
 
