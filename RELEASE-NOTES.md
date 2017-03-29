@@ -1,6 +1,10 @@
+### Version 2.2.10 - March 28, 2017
+
+- **Modal** - `onDeny` and `onApprove` callbacks can no longer occur multiple times if you rapidly click a approve/deny button in a. #4479
+
 #### Dropdown
 
-- **Dropdown** - Added new setting `filterAPIResults`, when set to `true` API will be expected to return the complete result set, which will then be filtered clientside to only display matching results. **Thanks @enix223** [#4815](https://github.com/Semantic-Org/Semantic-UI/pull/4815)
+- **Dropdown** - Added new setting `filterRemoteData`, when set to `true` API will be expected to return the complete result set, which will then be filtered clientside to only display matching results. **Thanks @enix223** [#4815](https://github.com/Semantic-Org/Semantic-UI/pull/4815)
 - **Dropdown/Search/Checkbox** - Removes use of deprecated `dispatchEvent` DOM APIs for generating simulated events
 
 ### Version 2.2.0 - June 26, 2016
