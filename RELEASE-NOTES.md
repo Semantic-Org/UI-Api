@@ -1,3 +1,7 @@
+### Version 2.2.11 - July 11, 2017
+
+- **API** - Clarified in docs that all AJAX parameters can be passed to API
+
 ### Version 2.2.10 - March 28, 2017
 
 - **Modal** - `onDeny` and `onApprove` callbacks can no longer occur multiple times if you rapidly click a approve/deny button in a. #4479
