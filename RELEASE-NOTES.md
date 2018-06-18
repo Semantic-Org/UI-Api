@@ -1,3 +1,7 @@
+### Version 2.3.2 - June 18, 2018
+
+- **Dropdown** Fixed bug that could cause dropdown to recursively trigger network requests specifically when using `apiSettings` with a url that returns valid response but with no results when clicking directly on the `dropdown icon`. **Thanks @vpeti** [#5231](https://github.com/Semantic-Org/Semantic-UI/issues/5231) [#5809](https://github.com/Semantic-Org/Semantic-UI/issues/5809)
+
 ### Version 2.2.11 - July 11, 2017
 
 - **API** - Clarified in docs that all AJAX parameters can be passed to API
