@@ -1,3 +1,7 @@
+### Version 2.5.0 - Oct 6, 2022
+
+- **Meteor** - Fix issue with misuse of `api.addAssets` #6790 **Thanks @gimco**
+
 ### Version 2.3.3 - July 8th, 2018
 
 - **Search** - Passing in `cache: false` will now affect default settings for `apiSettings` when using a remote endpoint. Previously you would also have to pass in `apiSettings: { cache: false}` as well
